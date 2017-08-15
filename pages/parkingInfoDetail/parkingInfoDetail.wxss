@@ -1,4 +1,4 @@
-@import 'style/weui.wxss';
+@import '../../style/weui.wxss';
 
 page{
     background-color: #F8F8F8;
@@ -6,10 +6,10 @@ page{
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
 .page__hd {
-    padding: 10px;
+    padding: 40px;
 }
 .page__bd {
-    padding-bottom: 10px;
+    padding-bottom: 40px;
 }
 .page__bd_spacing {
     padding-left: 15px;

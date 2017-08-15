@@ -1,0 +1,30 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{parking_info.name}}</view>
+        <view class="page__desc">{{parking_info.description}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">停车描述</view>
+            <view class="weui-article__section">
+                <view class="weui-article__title"></view>
+                <view class="weui-article__section">
+                    <!-- <view class="weui-article__h3">停车场信息</view> -->
+                    <view class="weui-article__p">
+                        地址: {{parking_info.province}}{{parking_info.city}}{{parking_info.district}}{{parking_info.address}}
+                    </view>
+                    <view class="weui-article__p">
+                        收费: {{parking_info.fee}}
+                    </view>
+                    <view class="weui-article__p">
+                        开放时间: {{parking_info.opening_time}}
+                    </view>
+                    <!-- <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
+                        <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
+                    </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
