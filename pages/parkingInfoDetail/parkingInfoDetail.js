@@ -9,46 +9,50 @@ Page({
             method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             // header: {}, // 设置请求的 header
             success: (res) => {
-                var parking_info
+                var parking_info = res.data.object
                 this.setData({
-                    parking_info: res.data.object,
+                    parking_info: parking_info,
                     markers: [{
-                        latitude: res.data.object.latitude,
-                        longitude: res.data.object.longitude,
-                        name: res.data.object.name,
-                        desc: res.data.object.description
+                        latitude: parking_info.latitude,
+                        longitude: parking_info.longitude,
+                        name: parking_info.name,
+                        desc: parking_info.description
                     }],
                     covers: [{
-                        latitude: res.data.object.latitude,
-                        longitude: res.data.object.longitude,
-                        iconPath: '../../img/marker_red.png',
+                        latitude: parking_info.latitude,
+                        longitude: parking_info.longitude,
+                        // iconPath: '../images/marker_red.png',
                         rotate: 10
                     }, {
-                        latitude: res.data.object.latitude,
-                        longitude: res.data.object.longitude,
-                        iconPath: '../../img/marker_yellow.png',
+                        latitude: parking_info.latitude,
+                        longitude: parking_info.longitude,
+                        // iconPath: '../images/marker_yellow.png',
                         rotate: 90
                     }]
-                })
-                wx.openLocation({
-                    latitude: parking_info.latitude, // 纬度，范围为-90~90，负数表示南纬
-                    longitude: parking_info.longitude, // 经度，范围为-180~180，负数表示西经
-                    scale: 1, // 缩放比例
-                    name: parking_info.name, // 位置名
-                    // address: 'address', // 地址的详细说明
-                    success: function(res){
-                        // success
-                    },
-                    fail: function() {
-                        // fail
-                    },
-                    complete: function() {
-                        // complete
-                    }
                 })
             }
         })
     },
+    markertap: function(e) {
+        var that = this
+        console.log(e)
+        wx.openLocation({
+            latitude: Number(e.currentTarget.dataset.parkinginfo.latitude), // 纬度，范围为-90~90，负数表示南纬
+            longitude: Number(e.currentTarget.dataset.parkinginfo.longitude), // 经度，范围为-180~180，负数表示西经
+            scale: 16, // 缩放比例
+            name: e.currentTarget.dataset.parkinginfo.name, // 位置名
+            // address: 'address', // 地址的详细说明
+            success: function(res){
+                // success
+            },
+            fail: function() {
+                // fail
+            },
+            complete: function() {
+                // complete
+            }
+        }) 
+    }
 })
 
 // var wxMarkerData = [];
