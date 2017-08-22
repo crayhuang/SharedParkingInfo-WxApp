@@ -2,7 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/parkingInfoList/parkingInfoList",
+    "pages/parkingInfoList/parkingInfoList", 
     "pages/parkingInfoDetail/parkingInfoDetail"
   ],
   "window":{

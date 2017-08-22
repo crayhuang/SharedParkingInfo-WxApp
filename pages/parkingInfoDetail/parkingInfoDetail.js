@@ -1,24 +1,123 @@
+var bmap = require('../../libs/bmap-wx.js');
 var app = getApp()
 
 Page({
     onLoad: function(options) {
-        console.log(options.id)
         wx.request({
             url: app.API_URL + 'api/v1.0/parking_infos/' + options.id,
             data: {},
             method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             // header: {}, // 设置请求的 header
             success: (res) => {
+                var parking_info
                 this.setData({
-                    parking_info: res.data.object
+                    parking_info: res.data.object,
+                    markers: [{
+                        latitude: res.data.object.latitude,
+                        longitude: res.data.object.longitude,
+                        name: res.data.object.name,
+                        desc: res.data.object.description
+                    }],
+                    covers: [{
+                        latitude: res.data.object.latitude,
+                        longitude: res.data.object.longitude,
+                        iconPath: '../../img/marker_red.png',
+                        rotate: 10
+                    }, {
+                        latitude: res.data.object.latitude,
+                        longitude: res.data.object.longitude,
+                        iconPath: '../../img/marker_yellow.png',
+                        rotate: 90
+                    }]
                 })
-            },
-            fail: function() {
-                // fail
-            },
-            complete: function() {
-                // complete
+                wx.openLocation({
+                    latitude: parking_info.latitude, // 纬度，范围为-90~90，负数表示南纬
+                    longitude: parking_info.longitude, // 经度，范围为-180~180，负数表示西经
+                    scale: 1, // 缩放比例
+                    name: parking_info.name, // 位置名
+                    // address: 'address', // 地址的详细说明
+                    success: function(res){
+                        // success
+                    },
+                    fail: function() {
+                        // fail
+                    },
+                    complete: function() {
+                        // complete
+                    }
+                })
             }
         })
-    }
-});
+    },
+})
+
+// var wxMarkerData = [];
+// Page({
+//     data: {
+//         markers: [],
+//         latitude: '',
+//         longitude: '',
+//         rgcData: {}
+//     },
+//     markertap: function(e) {
+//         var that = this;
+//         var id = e.markerId;
+//         that.changeMarkerColor(wxMarkerData, id)
+//     },
+//     onLoad: function(options) {
+//         console.log(options.id)
+//         var that = this;
+        
+//         wx.request({
+//             url: app.API_URL + 'api/v1.0/parking_infos/' + options.id,
+//             data: {},
+//             method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+//             // header: {}, // 设置请求的 header
+//             success: (res) => {
+//                 this.setData({
+//                     parking_info: res.data.object
+//                 })
+//             },
+//             fail: function() {
+//                 // fail
+//             },
+//             complete: function() {
+//                 // complete
+//             }
+//         })
+
+//         var BMap = new bmap.BMapWX({
+//             ak: 'GRAoA9p7mITR9L7pKsfPXFcbf0YgxbZp'
+//         });
+
+//         var fail = function(data) {
+//             console.log(data)
+//         };
+
+//         var success = function(data) {
+//             wxMarkerData = data.wxMarkerData;
+//             console.log(wxMarkerData[0].longitude)
+//         }
+//         BMap.regeocoding({
+//             fail: fail,
+//             success: success,
+//             iconPath: '../../img/marker_red.png', 
+//             iconTapPath: '../../img/marker_red.png' 
+//         });
+//     },
+//     changeMarkerColor: function(data, id) {
+//         var that = this;
+//         var markersTemp = [];
+//         for (var i = 0; i < data.length; i++) {
+//             if (i === id) {
+//                 data[i].iconPath = "../../img/marker_yellow.png";
+//             } else {
+//                 data[i].iconPath = "../../img/marker_red.png";
+//             }
+//             markersTemp[i] = data[i];
+//         }
+//         that.setData({
+//             markers: markersTemp
+//         });
+//     }
+// });

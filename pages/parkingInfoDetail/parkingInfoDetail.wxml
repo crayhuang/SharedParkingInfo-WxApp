@@ -1,11 +1,11 @@
 <view class="page">
     <view class="page__hd">
         <view class="page__title">{{parking_info.name}}</view>
-        <view class="page__desc">{{parking_info.description}}</view>
+        <!-- <view class="page__desc">{{parking_info.description}}</view> -->
     </view>
     <view class="page__bd">
         <view class="weui-article">
-            <view class="weui-article__h1">停车描述</view>
+            <view class="weui-article__h1">{{parking_info.description}}</view>
             <view class="weui-article__section">
                 <view class="weui-article__title"></view>
                 <view class="weui-article__section">
@@ -18,6 +18,9 @@
                     </view>
                     <view class="weui-article__p">
                         开放时间: {{parking_info.opening_time}}
+                    </view>
+                    <view class="map_container">
+                        <map class="map" id="map" longitude="{{parking_info.longitude}}" latitude="{{parking_info.latitude}}" scale="28" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map> 
                     </view>
                     <!-- <view class="weui-article__p">
                         <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
