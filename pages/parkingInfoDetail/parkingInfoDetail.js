@@ -1,4 +1,3 @@
-var bmap = require('../../libs/bmap-wx.js');
 var app = getApp()
 
 Page({
@@ -34,8 +33,6 @@ Page({
         })
     },
     markertap: function(e) {
-        var that = this
-        console.log(e)
         wx.openLocation({
             latitude: Number(e.currentTarget.dataset.parkinginfo.latitude), // 纬度，范围为-90~90，负数表示南纬
             longitude: Number(e.currentTarget.dataset.parkinginfo.longitude), // 经度，范围为-180~180，负数表示西经

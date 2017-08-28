@@ -1,4 +1,5 @@
 @import "/wxSearch/wxSearch.wxss";
+@import '/pages/components/wux.wxss';
 /**index.wxss**/
 /* .userinfo {
   display: flex;

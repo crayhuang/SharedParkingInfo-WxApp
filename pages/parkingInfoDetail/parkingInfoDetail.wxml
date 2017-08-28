@@ -20,7 +20,7 @@
                         开放时间: {{parking_info.opening_time}}
                     </view>
                     <view class="map_container">
-                        <map class="map" id="map" longitude="{{parking_info.longitude}}" latitude="{{parking_info.latitude}}" scale="24" show-location="true" markers="{{markers}}" covers="{{covers}}" bindtap="markertap" data-parkinginfo="{{parking_info}}"></map> 
+                        <map data-parkinginfo="{{parking_info}}" data-latitude="{{parking_info.latitude}}" data-longitude="{{parking_info.longitude}}" class="map" id="map" longitude="{{parking_info.longitude}}" latitude="{{parking_info.latitude}}" scale="24" show-location="true" markers="{{markers}}" covers="{{covers}}" bindtap="markertap" wx:if="{{parking_info}}"></map> 
                     </view>
                     <!-- <view class="weui-article__p">
                         <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
