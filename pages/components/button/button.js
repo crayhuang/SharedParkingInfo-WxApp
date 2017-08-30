@@ -9,9 +9,41 @@ export default {
             className: undefined, 
             position: `bottomRight`, 
 			backdrop: !1, 
-			buttons: [], 
-            buttonClicked() {}, 
-			callback() {}, 
+			buttons: [
+                {
+					label: '提交停车信息', 
+					icon: "/pages/images/submit-info-icon.png", 
+				},
+				{
+					label: '打赏', 
+					icon: "/pages/images/reward-icon.png", 
+				},
+				{
+					label: '感谢支持列表', 
+					icon: "/pages/images/thanks-list-icon.png", 
+				}
+            ], 
+            buttonClicked(index, item) {
+				index === 0 && wx.showModal({
+					title: 'Thank you for your support!', 
+					showCancel: !1, 
+				})
+
+				index === 1 && wx.switchTab({
+					url: '/pages/about/index'
+				})
+
+				index === 2 && wx.switchTab({
+					url: '/pages/index/index'
+				})
+
+				return true
+			},
+			callback(vm, opened) {
+				vm.setData({
+					opened, 
+				})
+			},
 		}
     },
     /**
