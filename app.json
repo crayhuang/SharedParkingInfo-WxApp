@@ -1,9 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
     "pages/parkingInfoList/parkingInfoList", 
-    "pages/parkingInfoDetail/parkingInfoDetail"
+    "pages/parkingInfoDetail/parkingInfoDetail",
+    "pages/parkingInfoSubmission/parkingInfoSubmission"
   ],
   "window":{
     "backgroundTextStyle":"light",

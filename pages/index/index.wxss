@@ -1,4 +1,4 @@
-@import "/wxSearch/wxSearch.wxss";
+@import "/pages/components/wxSearch/wxSearch.wxss";
 
 /**index.wxss**/
 /* .userinfo {

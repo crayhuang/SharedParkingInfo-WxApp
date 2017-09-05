@@ -24,10 +24,13 @@ export default {
 				}
             ], 
             buttonClicked(index, item) {
-				index === 0 && wx.showModal({
-					title: 'Thank you for your support!', 
-					showCancel: !1, 
-				})
+                index === 0 && wx.navigateTo({
+                    url: '/pages/parkingInfoSubmission/parkingInfoSubmission'
+                })
+				// index === 0 && wx.showModal({
+				// 	title: 'Thank you for your support!', 
+				// 	showCancel: !1, 
+				// })
 
 				index === 1 && wx.switchTab({
 					url: '/pages/about/index'

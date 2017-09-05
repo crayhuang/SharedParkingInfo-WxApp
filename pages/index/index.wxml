@@ -1,4 +1,4 @@
-<import src="/wxSearch/wxSearch.wxml"/>
+<import src="../components/wxSearch/wxSearch.wxml"/>
 <import src="../components/button/button.wxml"/>
 
 <template is="button" data="{{ ...$wux.button.br }}"/>
