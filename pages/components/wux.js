@@ -10,7 +10,7 @@ import $wuxButton from 'button/button'
 // import $wuxLoading from 'loading/loading'
 // import $wuxNotification from 'notification/notification'
 // import $wuxPicker from 'picker/picker'
-// import $wuxPickerCity from 'picker-city/picker-city'
+import $wuxPickerCity from 'picker-city/picker-city'
 // import $wuxPrompt from 'prompt/prompt'
 // import $wuxQrcode from 'qrcode/qrcode'
 // import $wuxRater from 'rater/rater'
@@ -33,7 +33,7 @@ export {
 	// $wuxLoading, 
 	// $wuxNotification, 
 	// $wuxPicker, 
-	// $wuxPickerCity, 
+	$wuxPickerCity, 
 	// $wuxPrompt, 
 	// $wuxQrcode, 
 	// $wuxRater, 
