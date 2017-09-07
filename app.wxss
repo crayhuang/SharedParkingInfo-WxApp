@@ -1,5 +1,7 @@
-@import 'style/weui.wxss';
-@import '/pages/components/wux.wxss';
+/* @import 'style/weui.wxss'; */
+@import 'pages/components/wux.wxss';
+@import 'pages/assets/styles/weui.wxss';
+@import 'pages/assets/styles/skyvow.wxss';
 
 page{
     background-color: #F8F8F8;

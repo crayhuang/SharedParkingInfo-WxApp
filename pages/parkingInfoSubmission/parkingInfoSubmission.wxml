@@ -4,19 +4,42 @@
 
 <view class="page">
     <view class="page__hd">
-        <view class="page__title">Picker</view>
-        <view class="page__desc">选择器</view>
+        <view class="page__title">提交停车场信息</view>
+        <view class="page__desc">(请确保信息来源真实，谢谢)</view>
     </view>
     <view class="page__bd">
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_select">
-                <view class="weui-cell__hd weui-cell__hd_in-select-after">
-                    <view class="weui-label">省市区</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <view class="weui-select weui-select_in-select-after" type="default" bindtap="onTapCity">{{city}}</view>
+        <form bindsubmit="submitForm">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">所在地区</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view data-selectedcity="{{city}}" class="weui-select weui-select_in-select-after" type="default" bindtap="onTapCity">{{city}}</view>
+                    </view>
                 </view>
             </view>
-        </view>
+            <view class="weui-cells">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">详细地址</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="address" value="{{address}}" class="weui-input" type="text" placeholder="请输入详细地址" />
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">收费</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input name="fee" value="{{fee}}" class="weui-input" type="text" placeholder="请输入停车场收费模式" />
+                        </view>
+                    </view>
+            </view>
+            <view class="button-sp-area">
+                <button class="weui-btn" type="primary" formType="submit">提交</button>
+            </view>
+        </form>
     </view>
 </view>

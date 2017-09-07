@@ -1,7 +1,7 @@
 //app.js
 App({
-  API_URL: 'http://l0r7zf1.hk1.mofasuidao.cn/',
-  // API_URL: 'http://k4vyvv8.hk1.mofasuidao.cn/',
+  // API_URL: 'http://l0r7zf1.hk1.mofasuidao.cn/',
+  API_URL: 'http://k4vyvv8.hk1.mofasuidao.cn/',
   onLaunch: function() {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
