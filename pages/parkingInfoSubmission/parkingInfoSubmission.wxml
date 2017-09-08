@@ -1,6 +1,8 @@
 <import src="/pages/components/picker-city/picker-city.wxml" />
+<import src="/pages/components/toptips/toptips.wxml"/>
 
 <template is="picker-city" data="{{ ...$wux.pickerCity.city }}"/>
+<template is="toptips" data="{{ ...$wux.toptips }}"/>
 
 <view class="page">
     <view class="page__hd">
@@ -22,6 +24,14 @@
             <view class="weui-cells">
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
+                        <view class="weui-label">停车场名称</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="name" valul="{{name}}" class="weui-input" type="text" placeholder="请输入停车场名称" />
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
                         <view class="weui-label">详细地址</view>
                     </view>
                     <view class="weui-cell__bd">
@@ -29,16 +39,24 @@
                     </view>
                 </view>
                 <view class="weui-cell weui-cell_input">
-                        <view class="weui-cell__hd">
-                            <view class="weui-label">收费</view>
-                        </view>
-                        <view class="weui-cell__bd">
-                            <input name="fee" value="{{fee}}" class="weui-input" type="text" placeholder="请输入停车场收费模式" />
-                        </view>
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">收费</view>
                     </view>
+                    <view class="weui-cell__bd">
+                        <input name="fee" value="{{fee}}" class="weui-input" type="text" placeholder="请输入停车场收费模式" />
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">描述</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="description" value="{{description}}" class="weui-input" type="text" placeholder="停车场描述(可选)" />
+                    </view>
+                </view>
             </view>
             <view class="button-sp-area">
-                <button class="weui-btn" type="primary" formType="submit">提交</button>
+                <button class="weui-btn" type="primary" formType="submit" disabled="{{disabled}}">提交</button>
             </view>
         </form>
     </view>

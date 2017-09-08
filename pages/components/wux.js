@@ -17,7 +17,7 @@ import $wuxPickerCity from 'picker-city/picker-city'
 // import $wuxRefresher from 'refresher/refresher'
 // import $wuxSeats from 'seats/seats'
 // import $wuxToast from 'toast/toast'
-// import $wuxToptips from 'toptips/toptips'
+import $wuxToptips from 'toptips/toptips'
 // import $wuxXnumber from 'xnumber/xnumber'
 
 export {
@@ -40,6 +40,6 @@ export {
 	// $wuxRefresher, 
 	// $wuxSeats, 
 	// $wuxToast, 
-	// $wuxToptips, 
+	$wuxToptips, 
 	// $wuxXnumber, 
 }

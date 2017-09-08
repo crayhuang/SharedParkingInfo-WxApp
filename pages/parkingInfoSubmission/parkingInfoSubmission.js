@@ -1,4 +1,4 @@
-import { $wuxPicker, $wuxPickerCity } from '../components/wux'
+import {$wuxPicker, $wuxPickerCity, $wuxToptips} from '../components/wux'
 
 var app = getApp()
 
@@ -7,8 +7,10 @@ var item = {};
 var selected_city = {};
 
 Page({
+	data: {
+		disabled: false
+	},
     onLoad: function() {
-        
     },
     onTapCity(e) {
 		$wuxPickerCity.init('city', {
@@ -39,6 +41,13 @@ Page({
             method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             // header: {}, // 设置请求的 header
             success: (res) => {
+				$wuxToptips.success({
+					hidden: !0,
+					text: "提交成功！"
+				})
+				this.setData({
+					disabled: true
+				})
 				console.log("submit sucess!")
             }
         })
