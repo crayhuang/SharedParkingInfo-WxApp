@@ -43,7 +43,7 @@
                         <view class="weui-label">收费</view>
                     </view>
                     <view class="weui-cell__bd">
-                        <input name="fee" value="{{fee}}" class="weui-input" type="text" placeholder="请输入停车场收费模式" />
+                        <input name="fee" value="{{fee}}" class="weui-input" type="text" placeholder="请输入收费信息" />
                     </view>
                 </view>
                 <view class="weui-cell weui-cell_input">

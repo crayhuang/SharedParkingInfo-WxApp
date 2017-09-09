@@ -1,4 +1,5 @@
 import {$wuxPicker, $wuxPickerCity, $wuxToptips} from '../components/wux'
+import WxValidate from '../assets/plugins/WxValidate'
 
 var app = getApp()
 
@@ -11,6 +12,7 @@ Page({
 		disabled: false
 	},
     onLoad: function() {
+		this.initValidate()
     },
     onTapCity(e) {
 		$wuxPickerCity.init('city', {
@@ -25,7 +27,42 @@ Page({
 			},
 		})
 	},
+	showToptips(error) {
+		const hideToptips = $wuxToptips.show({
+			timer: 3000,
+			text: error.msg || '请填写正确的字段',
+			success: () => console.log('toptips', error)
+		})
+	},
+	initValidate() {
+		this.WxValidate = new WxValidate({
+			name: {
+				required: true,
+			},
+			address: {
+				required: true,
+			},
+			fee: {
+				required: true,
+			}
+		}, {
+			name: {
+				required: '请输入停车场名字',
+			},
+			address: {
+				required: '请输入详细地址',
+			},
+			fee: {
+				required: '请输入收费信息',
+			}
+		})
+	},
 	submitForm(e) {
+		if (!this.WxValidate.checkForm(e)) {
+			const error = this.WxValidate.errorList[0]
+			this.showToptips(error)
+			return false
+		}
 		const params = e.detail.value
 		console.log(params);
 		console.log(selected_city)
