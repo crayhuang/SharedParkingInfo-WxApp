@@ -1,7 +1,9 @@
 <import src="../components/wxSearch/wxSearch.wxml"/>
 <import src="../components/button/button.wxml"/>
+<import src="/pages/components/loading/loading.wxml"/>
 
 <template is="button" data="{{ ...$wux.button.br }}"/>
+<template is="loading" data="{{...$wux.loading}}"/>
 
 <view class="weui-search-bar">
     <view class="weui-search-bar__form">

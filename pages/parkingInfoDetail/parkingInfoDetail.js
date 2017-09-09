@@ -1,7 +1,12 @@
+import {$wuxLoading} from '../components/wux'
+
 var app = getApp()
 
 Page({
     onLoad: function(options) {
+        $wuxLoading.show({
+            text: '数据加载中',
+        })
         wx.request({
             url: app.API_URL + 'api/v1.0/parking_infos/' + options.id,
             data: {},
@@ -29,6 +34,7 @@ Page({
                         rotate: 90
                     }]
                 })
+                $wuxLoading.hide()
             }
         })
     },

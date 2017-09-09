@@ -1,3 +1,7 @@
+<import src="/pages/components/loading/loading.wxml"/>
+
+<template is="loading" data="{{...$wux.loading}}"/>
+
 <view class="page">
     <view class="page__hd">
         <view class="page__title">{{parking_info.name}}</view>

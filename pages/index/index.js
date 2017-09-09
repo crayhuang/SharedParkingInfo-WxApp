@@ -1,11 +1,13 @@
-import { $wuxButton } from '../components/wux'
+import {$wuxButton, $wuxLoading} from '../components/wux'
 
 var base64 = require("../images/base64");
 var app = getApp()
 
 Page({
   onLoad: function () {
-		// this.initButton()
+		$wuxLoading.show({
+			text: '数据加载中'
+		})
 		this.button = $wuxButton.init('br')
     var cur_latitude
     var cur_longitude
@@ -33,7 +35,8 @@ Page({
               parking_info_list: res.data.object,
               icon20: base64.icon20,
               icon60: base64.icon60
-            })
+						})
+						$wuxLoading.hide()
           },
           fail: function () {
             // fail
@@ -41,59 +44,8 @@ Page({
           complete: function () {
             // complete
           }
-        })
+				})
       }
     })
   },
-  // initButton(position = 'bottomRight') {
-	// 	this.setData({
-	// 		opened: 1, 
-	// 	})
-	// 	this.button = $wuxButton.init('br', {
-	// 		position: position, 
-	// 		buttons: [
-	// 			{
-	// 				label: '提交停车信息', 
-	// 				icon: "../images/submit-info-icon.png", 
-	// 			},
-	// 			{
-	// 				label: '打赏', 
-	// 				icon: "../images/reward-icon.png", 
-	// 			},
-	// 			{
-	// 				label: '感谢支持列表', 
-	// 				icon: "../images/thanks-list-icon.png", 
-	// 			}
-	// 		],
-	// 		buttonClicked(index, item) {
-	// 			index === 0 && wx.showModal({
-	// 				title: 'Thank you for your support!', 
-	// 				showCancel: !1, 
-	// 			})
-
-	// 			index === 1 && wx.switchTab({
-	// 				url: '/pages/about/index'
-	// 			})
-
-	// 			index === 2 && wx.switchTab({
-	// 				url: '/pages/index/index'
-	// 			})
-
-	// 			return true
-	// 		},
-	// 		callback(vm, opened) {
-	// 			vm.setData({
-	// 				opened, 
-	// 			})
-	// 		},
-	// 	})
-	// },
-	// switchChange(e) {
-	// 	e.detail.value ? this.button.open() : this.button.close()
-	// },
-	// pickerChange(e) {
-	// 	const index = e.detail.value
-	// 	const position = this.data.types[index]
-	// 	this.initButton(position)
-	// },
 })

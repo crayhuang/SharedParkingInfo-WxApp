@@ -7,7 +7,7 @@ import $wuxButton from 'button/button'
 // import $wuxCountUp from 'countup/countup'
 // import $wuxDialog from 'dialog/dialog'
 // import $wuxGallery from 'gallery/gallery'
-// import $wuxLoading from 'loading/loading'
+import $wuxLoading from 'loading/loading'
 // import $wuxNotification from 'notification/notification'
 // import $wuxPicker from 'picker/picker'
 import $wuxPickerCity from 'picker-city/picker-city'
@@ -30,7 +30,7 @@ export {
 	// $wuxCountUp, 
 	// $wuxDialog, 
 	// $wuxGallery, 
-	// $wuxLoading, 
+	$wuxLoading, 
 	// $wuxNotification, 
 	// $wuxPicker, 
 	$wuxPickerCity, 
