@@ -1,7 +1,9 @@
 import {$wuxPicker, $wuxPickerCity, $wuxToptips} from '../components/wux'
 import WxValidate from '../assets/plugins/WxValidate'
 
+var crypto = require('../../utils/crypto-js')
 var app = getApp()
+var timestamp = Date.parse(new Date()) / 1000
 
 var show = false;
 var item = {};
@@ -70,6 +72,8 @@ Page({
 		params["province"] = selected_city[0]
 		params["city"] = selected_city[1]
 		params["district"] = selected_city[2]
+		params["timestamp"] = timestamp
+		params["sign"] = crypto.SHA1(timestamp + app.APP_ID + app.APP_SECRET).toString()
 		
 		console.log(params)
 		wx.request({
