@@ -1,7 +1,9 @@
 import {$wuxButton, $wuxLoading} from '../components/wux'
+var crypto = require('../../utils/crypto-js')
 
 var base64 = require("../images/base64");
 var app = getApp()
+var timestamp = Date.parse(new Date()) / 1000; 
 
 Page({
   onLoad: function () {
@@ -23,11 +25,15 @@ Page({
         // fail
       },
       complete: function () {
-        console.log("Latitude: " + cur_latitude)
-        console.log("Longitude: " + cur_longitude)
         wx.request({
-          url: app.API_URL + 'api/v1.0/parking_infos?latitude=' + cur_latitude + '&longitude=' + cur_longitude,
-          data: {},
+          // url: app.API_URL + 'api/v1.0/parking_infos?latitude=' + cur_latitude + '&longitude=' + cur_longitude,
+          url: app.API_URL + 'api/v1.0/parking_infos',
+          data: {
+            latitude: cur_latitude,
+            longitude: cur_longitude,
+            timestamp: timestamp,
+            sign: crypto.SHA1(timestamp + app.APP_ID + app.APP_SECRET).toString()
+          },
           method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
           // header: {}, // 设置请求的 header
           success: (res) => {
