@@ -54,4 +54,34 @@ Page({
       }
     })
   },
+  search: function(e) {
+    $wuxLoading.show({
+			text: '数据加载中'
+		})
+    var that = this
+    wx.request({
+      url: app.API_URL + 'api/v1.0/parking_infos/search',
+      data: {
+        keyword: e.detail.value,
+        timestamp: timestamp,
+        sign: crypto.SHA1(timestamp + app.APP_ID + app.APP_SECRET).toString()
+      },
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        that.setData({
+          parking_info_list: res.data.object,
+          icon20: base64.icon20,
+          icon60: base64.icon60
+        })
+        $wuxLoading.hide()
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  }
 })
