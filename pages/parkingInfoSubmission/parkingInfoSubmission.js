@@ -65,6 +65,9 @@ Page({
 			this.showToptips(error)
 			return false
 		}
+		this.setData({
+			disabled: true
+		})
 		const params = e.detail.value
 		console.log(params);
 		console.log(selected_city)
@@ -86,9 +89,9 @@ Page({
 					hidden: !0,
 					text: "提交成功！"
 				})
-				this.setData({
-					disabled: true
-				})
+				// this.setData({
+				// 	disabled: true
+				// })
 				console.log("submit sucess!")
             }
         })
