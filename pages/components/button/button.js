@@ -19,7 +19,7 @@ export default {
 					icon: "/pages/images/reward-icon.png", 
 				},
 				{
-					label: '感谢支持列表', 
+					label: '欢迎反馈', 
 					icon: "/pages/images/thanks-list-icon.png", 
 				}
             ], 
@@ -27,6 +27,11 @@ export default {
                 index === 0 && wx.navigateTo({
                     url: '/pages/parkingInfoSubmission/parkingInfoSubmission'
                 })
+                
+                index === 2 && wx.navigateTo({
+                    url: '/pages/feedback/feedback'
+                })
+
 				// index === 0 && wx.showModal({
 				// 	title: 'Thank you for your support!', 
 				// 	showCancel: !1, 
@@ -36,9 +41,9 @@ export default {
 					url: '/pages/about/index'
 				})
 
-				index === 2 && wx.switchTab({
-					url: '/pages/index/index'
-				})
+				// index === 2 && wx.switchTab({
+				// 	url: '/pages/index/index'
+				// })
 
 				return true
 			},

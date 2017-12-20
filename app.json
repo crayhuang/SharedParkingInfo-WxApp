@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/parkingInfoDetail/parkingInfoDetail",
-    "pages/parkingInfoSubmission/parkingInfoSubmission"
+    "pages/parkingInfoSubmission/parkingInfoSubmission",
+    "pages/feedback/feedback"
   ],
   "window":{
     "backgroundTextStyle":"light",

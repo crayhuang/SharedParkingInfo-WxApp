@@ -1,0 +1,11 @@
+<import src="/pages/components/loading/loading.wxml"/>
+
+<template is="loading" data="{{...$wux.loading}}"/>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">欢迎反馈，非常感谢大家的意见</view>
+        <view class="page__desc"><text>联系邮箱：cray.huang@gmail.com</text></view>
+        <view class="page__desc">该小程序的目的是为大家打造一个停车场信息的分享平台，从而方便大家在停车时获取到有帮助的信息，目前信息量还存在很大的不足，希望大家可以一起把停车场的信息丰富起来！</view>
+    </view>
+</view>
