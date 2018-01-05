@@ -16,6 +16,13 @@ Page({
             parking_info_name: options.parking_info_name
         })
     },
+    showToptips(error) {
+        const hideToptips = $wuxToptips.show({
+          timer: 3000,
+          text: error.msg || '请填写正确的字段',
+          success: () => console.log('toptips', error)  
+        })
+    },
     initValidate() {
         this.WxValidate = new WxValidate({
             feedback_content: {
@@ -27,7 +34,7 @@ Page({
             }
         })
     },
-    submitFomr(e) {
+    submitForm(e) {
         if (!this.WxValidate.checkForm(e)) {
             const error = this.WxValidate.errorList[0]
             this.showToptips(error)
@@ -37,6 +44,7 @@ Page({
             disabled: true
         })
         const params = e.detail.value
+		params["timestamp"] = timestamp
         params["sign"] = crypto.SHA1(timestamp + app.APP_ID + app.APP_SECRET).toString()
         wx.request({
             url: app.API_URL + 'api/v1.0/feedback',
