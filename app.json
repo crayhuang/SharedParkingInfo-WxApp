@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/parkingInfoDetail/parkingInfoDetail",
     "pages/parkingInfoSubmission/parkingInfoSubmission",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",

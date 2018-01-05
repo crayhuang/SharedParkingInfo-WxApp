@@ -1,0 +1,11 @@
+<import src="/pages/components/loading/loading.wxml"/>
+
+<template is="loading" data="{{...$wux.loading}}"/>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">关于共享停车信息小程序</view>
+        <view class="page__desc">共享停车小程序的目标是为各位车友提供一个分享共享停车场信息的平台，从而方便大家在停车时获取到有帮助的信息，目前信息量（纯手工收集的）还存在很大的不足，希望大家可以一起把停车场的信息丰富起来！同时也期望该小程序可以让各位车友日后旅游、上班等开车出行更加方便</view>
+        <view class="page__desc"><text>欢迎各位用户提供宝贵意见或交流，交流邮箱：cray.huang@gmail.com</text></view>
+    </view>
+</view>

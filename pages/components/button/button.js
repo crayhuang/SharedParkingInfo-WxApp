@@ -15,12 +15,12 @@ export default {
 					icon: "/pages/images/submit-info-icon.png", 
 				},
 				{
-					label: '打赏', 
-					icon: "/pages/images/reward-icon.png", 
-				},
-				{
 					label: '欢迎反馈', 
 					icon: "/pages/images/thanks-list-icon.png", 
+				},
+				{
+					label: '关于小程序', 
+					icon: "/pages/images/reward-icon.png", 
 				}
             ], 
             buttonClicked(index, item) {
@@ -28,18 +28,18 @@ export default {
                     url: '/pages/parkingInfoSubmission/parkingInfoSubmission'
                 })
                 
-                index === 2 && wx.navigateTo({
+                index === 1 && wx.navigateTo({
                     url: '/pages/feedback/feedback'
                 })
 
+				index === 2 && wx.navigateTo({
+					url: '/pages/about/about'
+				})
 				// index === 0 && wx.showModal({
 				// 	title: 'Thank you for your support!', 
 				// 	showCancel: !1, 
 				// })
 
-				index === 1 && wx.switchTab({
-					url: '/pages/about/index'
-				})
 
 				// index === 2 && wx.switchTab({
 				// 	url: '/pages/index/index'

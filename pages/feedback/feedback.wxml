@@ -1,11 +1,38 @@
-<import src="/pages/components/loading/loading.wxml"/>
+<import src="/pages/components/toptips/toptips.wxml"/>
 
-<template is="loading" data="{{...$wux.loading}}"/>
+<template is="toptips" data="{{...$wux.toptips}}"/>
 
 <view class="page">
     <view class="page__hd">
-        <view class="page__title">欢迎反馈，非常感谢大家的意见</view>
-        <view class="page__desc"><text>联系邮箱：cray.huang@gmail.com</text></view>
-        <view class="page__desc">该小程序的目的是为大家打造一个停车场信息的分享平台，从而方便大家在停车时获取到有帮助的信息，目前信息量还存在很大的不足，希望大家可以一起把停车场的信息丰富起来！</view>
+        <view class="page__title">提交反馈</view>
+        <view class="page__desc">(请确保信息来源真实，谢谢)</view>
+    </view>
+    <view class="page__bd">
+        <form bindsubmit="submitForm">
+            <view class="weui-cells">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">停车场名称</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="parking_info_name" value="{{parking_info_name}}" class="weui-input" type="text" disabled="true" />
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">反馈信息</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="feedback_content" value="{{feedback_content}}" class="weui-input" type="text" placeholder="请填写纠正后的停车场信息" />
+                    </view>
+                </view>
+            </view>
+            <view hidden="true">
+                <input name="parking_info_id" value="{{parking_info_id}}"/>
+            </view>
+            <view class="button-sp-area">
+                <button class="weui-btn" type="primary" formType="submit" disabled="{{disabled}}">提交</button>
+            </view>
+        </form>
     </view>
 </view>

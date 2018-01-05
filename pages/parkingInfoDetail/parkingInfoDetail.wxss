@@ -42,3 +42,7 @@ page{
     height: 100%;
     width: 100%;
 }
+
+.navigator-link {
+    color: cornflowerblue;
+}

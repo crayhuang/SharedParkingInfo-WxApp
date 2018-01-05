@@ -87,7 +87,7 @@ Page({
             success: (res) => {
 				$wuxToptips.success({
 					hidden: !0,
-					text: "提交成功！"
+					text: "提交停车场信息成功！"
 				})
 				// this.setData({
 				// 	disabled: true

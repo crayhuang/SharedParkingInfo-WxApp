@@ -5,7 +5,9 @@
 <view class="page">
     <view class="page__hd">
         <view class="page__title">{{parking_info.name}}</view>
-        <view class="page__desc">{{parking_info.description}}</view>
+        <view class="page__desc">{{parking_info.description}}
+            <navigator class="navigator-link" url="../feedback/feedback?parking_info_id={{parking_info.id}}&parking_info_name={{parking_info.name}}">信息纠错</navigator>
+        </view>
     </view>
     <view class="page__bd">
         <view class="weui-article">
