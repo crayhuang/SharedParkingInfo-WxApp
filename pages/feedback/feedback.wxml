@@ -23,7 +23,7 @@
                         <view class="weui-label">反馈信息</view>
                     </view>
                     <view class="weui-cell__bd">
-                        <textarea fixed style="height: 200px; margin-top: 10px;" name="feedback_content" value="{{feedback_content}}" class="weui-input" type="text" placeholder="请填写纠正后的停车场信息" />
+                        <textarea fixed style="height: 200px; margin-top: 10px;" name="feedback_content" value="{{feedback_content}}" class="weui-input" type="text" placeholder="请填写纠正后的停车场信息(比如停车场准确的地址，实际费用以及停车优惠等)" />
                     </view>
                 </view>
             </view>

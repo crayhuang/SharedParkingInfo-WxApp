@@ -1,8 +1,8 @@
 //app.js
 App({
   // API_URL: 'http://l0r7zf1.hk1.mofasuidao.cn/',
-  API_URL: 'http://k4vyvv8.hk1.mofasuidao.cn/',
-  // API_URL: 'https://www.gxtingche.com/',
+  // API_URL: 'http://k4vyvv8.hk1.mofasuidao.cn/',
+  API_URL: 'https://www.gxtingche.com/',
   APP_ID: 'APPID12345',
   APP_SECRET: 'APPSECRET12345',
   onLaunch: function() {
