@@ -25,6 +25,9 @@
                     <view class="weui-article__p">
                         开放时间: {{parking_info.opening_time}}
                     </view>
+                    <view class="weui-article__p">
+                        备注: {{parking_info.remark}}
+                    </view>
                     <view class="map_container">
                         <map data-parkinginfo="{{parking_info}}" data-latitude="{{parking_info.latitude}}" data-longitude="{{parking_info.longitude}}" class="map" id="map" longitude="{{parking_info.longitude}}" latitude="{{parking_info.latitude}}" scale="24" show-location="true" markers="{{markers}}" covers="{{covers}}" bindtap="markertap" wx:if="{{parking_info}}"></map> 
                     </view>

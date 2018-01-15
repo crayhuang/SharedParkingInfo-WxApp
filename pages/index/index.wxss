@@ -21,3 +21,6 @@
 .usermotto {
   margin-top: 200px;
 } */
+page{
+  background-color: #E6E6E6;
+}
