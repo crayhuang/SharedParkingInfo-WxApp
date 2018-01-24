@@ -7,6 +7,7 @@ var timestamp = Date.parse(new Date()) / 1000;
 
 Page({
   onLoad: function () {
+    this.button = $wuxButton.init('br');
     wx.getUserInfo({
       success: function(res){
         var user_info = res.userInfo
